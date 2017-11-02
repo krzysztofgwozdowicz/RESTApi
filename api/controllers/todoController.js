@@ -64,8 +64,8 @@ exports.delete_a_task = function(req, res) {
 };
 exports.display_help = function(req, res){
   res.json({subsites:{
-              "/tasks" : "get all taksk ",
-              "/tasks/taskID" : "get,update,delete task with specified taskId ",
+              "/tasks" : "get all task or post new task ",
+              "/tasks/taskID" : "get,put,delete task with specified taskId ",
               "/api" : "displays this info ",
                       }
 });
