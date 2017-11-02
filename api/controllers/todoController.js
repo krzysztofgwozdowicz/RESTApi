@@ -66,6 +66,7 @@ exports.display_help = function(req, res){
   res.json({subsites:{
               "/tasks" : "get all taksk ",
               "/tasks/taskID" : "get,update,delete task with specified taskId ",
+              "/api" : "displays this info ",
                       }
 });
 
