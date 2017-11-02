@@ -59,4 +59,18 @@ exports.delete_a_task = function(req, res) {
       res.send(err);
     res.json({ message: 'Task successfully deleted' });
   });
+
+
 };
+exports.display_help = function(req, res){
+  res.json({subsites:{
+              "/tasks" : "get all taksk ",
+              "/tasks/taskID" : "get,update,delete task with specified taskId ",
+                      }
+});
+
+};
+
+
+
+
