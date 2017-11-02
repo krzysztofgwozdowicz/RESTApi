@@ -12,8 +12,16 @@ port = process.env.PORT || 3000, //enviromental variable or specified default po
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
+// mongo connection key                                                                                                                                              name of db
 mongoose.connect('mongodb://kgtestmongo:otUR09whH9vuu2GTmkEU2TWx4Yj6Dgl3sa846qfTwBgH8dHdJonMxfNrjgHWmSsX5NrKcLXOTSL0IcsDTUISfw==@kgtestmongo.documents.azure.com:10255/admin2?ssl=true');
 // after connecting to database
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
 
 // here we describe which type of bodyParser will our express app use
 app.use(bodyParser.urlencoded({ extended: true }));

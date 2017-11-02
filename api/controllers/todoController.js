@@ -2,7 +2,7 @@
 
 // import mongoose package
 var mongoose = require('mongoose'),
-  // Here we specify which model we want to use (it's also name of collection (lowerCased))
+  // Here we specify which model we want to use (it's also name of collection in db (lowerCased))
   // name of model is usually described in ./api/models folder
   Task = mongoose.model('Task');
 
@@ -62,15 +62,7 @@ exports.delete_a_task = function(req, res) {
 
 
 };
-exports.display_help = function(req, res){
-  res.json({subsites:{
-              "/tasks" : "get all task or post new task ",
-              "/tasks/taskID" : "get,put,delete task with specified taskId ",
-              "/api" : "displays this info ",
-                      }
-});
 
-};
 
 
 
