@@ -8,6 +8,10 @@ var UserSchema = new Schema({
     type: String,
     required: 'Insert User Name Here'
   },
+  password:{
+      type: String,
+      required: 'Password is essential'
+  },
   Created_date: {
     type: Date,
     default: Date.now
