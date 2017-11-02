@@ -13,7 +13,7 @@ module.exports = function(app) {
     .post(userList.create_user);
 
   // when you add /taskId variable into to the url described above, you will be able to display, delete or update existing task with specified ID 
-  app.route('/users/:taskId')
+  app.route('/users/:userId')
     .get(userList.read_user)
     .put(userList.update_user)
     .delete(userList.delete_user);
