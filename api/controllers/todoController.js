@@ -26,6 +26,7 @@ exports.create_a_task = function(req, res) {
   var new_task = new Task(req.body);
   // here we use moongoose library's method, save to create new task
   new_task.save(function(err, task) {
+    console.log("okkeeeej");
     if (err)
       res.send(err);
     res.json(task);
