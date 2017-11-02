@@ -8,16 +8,16 @@ exports.display_help = function(req, res){
                         },
                 taskBody:{
                     name: {
-                        type: String,
-                        required: 'Kindly enter the name of the task'
+                        type: "String",
+                        required: 'specify name of the task'
                       },
                       Created_date: {
-                        type: Date,
-                        default: Date.now
+                        type: "Date",
+                        default: "Date.now"
                       },
                       status: {
                         type: [{
-                          type: String,
+                          type: "String",
                           enum: ['pending', 'ongoing', 'completed']
                         }],
                         default: ['pending']
