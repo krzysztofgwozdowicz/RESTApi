@@ -13,10 +13,10 @@ var TaskSchema = new Schema({
     default: Date.now
   },
   status: {
-    type: [{
+    type: {
       type: String,
       enum: ['pending', 'ongoing', 'completed']
-    }],
+    },
     default: ['pending']
   }
 });
