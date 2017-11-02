@@ -5,6 +5,7 @@
 module.exports = function(app) {
   // here we import methods from Controller
   var todoList = require('../controllers/todoController');
+  var utilities = require('../controllers/utilitiesController');
 
   // todoList Routes. Whne You enter address:port/tasks, you will be able to use get and post methods
   app.route('/tasks')
@@ -17,5 +18,5 @@ module.exports = function(app) {
     .put(todoList.update_a_task)
     .delete(todoList.delete_a_task);
     
-  app.route('/api').get(todoList.display_help)
+  app.route('/api').get(utilities.display_help)
 };
