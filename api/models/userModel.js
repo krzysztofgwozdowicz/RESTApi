@@ -13,11 +13,11 @@ var UserSchema = new Schema({
     default: Date.now
   },
   status: {
-    type: {
+    type: [{
       type: String,
       enum: ['active', 'pending approval', 'inactive', 'temporarilly blocked', 'blacklisted']
-    },
-    default: ['pending approval']
+    }],
+    default: ['active']
   }
 });
 
