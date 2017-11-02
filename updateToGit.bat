@@ -1,3 +1,3 @@
 git add .
 git commit -m "next update"
-git push -u origin todoComplete
+git push -u origin master
