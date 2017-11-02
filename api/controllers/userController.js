@@ -26,7 +26,6 @@ exports.create_user = function (req, res) {
     var new_user = new User(req.body);
     // here we use moongoose library's method, save to create new User
     new_user.save(function (err, user) {
-        console.log("okkeeeej");
         if (err)
             res.send(err);
         res.json(user);
@@ -66,5 +65,17 @@ exports.delete_user = function (req, res) {
 
 
 
-
+//Here we create method which finds User with specified Id
+exports.read_user_by_name = function (req, res) {
+    console.log('zzz');
+    console.log(req.params.userName);
+    
+    // again we use libvrary's internal method, findById, and pass request parameter to it  
+    User.find({name:req.params.userName}, function (err, user) {
+        if (err)
+            res.send(err);
+        console.log(user);    
+        res.json(user);
+    });
+};
 
