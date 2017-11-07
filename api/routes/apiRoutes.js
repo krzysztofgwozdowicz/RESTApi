@@ -4,14 +4,22 @@
 // here we export this whole function
 module.exports = function(app) {
   // here we import methods from Controller
-  var userList = require('../controllers/userController');
+  var productList = require('../controllers/productController');
   var utilities = require('../controllers/utilitiesController');
 
-  // userList Routes. Whne You enter address:port/tasks, you will be able to use get and post methods
+  // productList Routes. Whne You enter address:port/tasks, you will be able to use get and post methods
   app.route('/products')
-    .get(userList.list_all_users)
-    .post(userList.create_user);
+    .get(productList.list_all_products)
+    .post(productList.create_product);
 
- 
-  app.route('/api').get(utilities.display_help)
+  // when you add /taskId variable into to the url described above, you will be able to display, delete or update existing task with specified ID 
+  app.route('/products/:productId')
+    .get(productList.read_product)
+    .put(productList.update_product)
+    .delete(productList.delete_product);
+  
+  app.route('/products/findbyname/:productName')
+    .get(productList.read_products_by_name);
+
+  app.route('/api').get(utilities.display_help);
 };
