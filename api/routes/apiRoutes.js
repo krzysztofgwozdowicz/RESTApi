@@ -8,18 +8,10 @@ module.exports = function(app) {
   var utilities = require('../controllers/utilitiesController');
 
   // userList Routes. Whne You enter address:port/tasks, you will be able to use get and post methods
-  app.route('/users')
+  app.route('/products')
     .get(userList.list_all_users)
     .post(userList.create_user);
 
-  // when you add /taskId variable into to the url described above, you will be able to display, delete or update existing task with specified ID 
-  app.route('/users/:userId')
-    .get(userList.read_user)
-    .put(userList.update_user)
-    .delete(userList.delete_user);
-  
-  app.route('/users/findbyname/:userName')
-    .get(userList.read_user_by_name)
-
+ 
   app.route('/api').get(utilities.display_help)
 };

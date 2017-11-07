@@ -4,17 +4,17 @@
 var mongoose = require('mongoose'),
     // Here we specify which model we want to use (it's also name of collection in db (lowerCased))
     // name of model is usually described in ./api/models folder
-    User = mongoose.model('User');
+    User = mongoose.model('Product');
 
 // Here we define list_all_Users method, and export it
 exports.list_all_users = function (req, res) {
     // here we find all Users that are corresponding to specified model  
-    User.find({}, function (err, user) {
+    User.find({}, function (err, prod) {
         if (err)
             // if error occurs, send it
             res.send(err);
         // if there is no error, send found Users in form of json
-        res.json(user);
+        res.json(prod);
     });
 };
 
@@ -68,8 +68,9 @@ exports.delete_user = function (req, res) {
 //Here we create method which finds User with specified Id
 exports.read_user_by_name = function (req, res) {
     console.log('zzz');
-    console.log(req.params.userName);
-    
+    console.log("userName: "+req.params.userName);
+    console.log("userID: "+req.params.userId);
+    console.log("userStatus: "+req.params.userStatus);
     // again we use libvrary's internal method, findById, and pass request parameter to it  
     User.find({name:req.params.userName}, function (err, user) {
         if (err)
