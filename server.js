@@ -4,7 +4,7 @@
 var express = require('express'),
 app = express(),
 mongoose = require('mongoose'),
-Task = require('./api/models/productModel'), //created model loading here
+Operation = require('./api/models/recordModel'), //created model loading here
 bodyParser = require('body-parser');
 
 // here we describe, on which port our application will listen
@@ -13,7 +13,7 @@ port = process.env.PORT || 3000, //enviromental variable or specified default po
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 // mongo connection key                                                                                                                                              name of db
-mongoose.connect('mongodb://kgtestmongo:otUR09whH9vuu2GTmkEU2TWx4Yj6Dgl3sa846qfTwBgH8dHdJonMxfNrjgHWmSsX5NrKcLXOTSL0IcsDTUISfw==@kgtestmongo.documents.azure.com:10255/bazaKonrada?ssl=true');
+mongoose.connect('mongodb://drc-cosmosdb-ne:Y4LvarLsh0WHO5gXkAasHvkqrgRwVtmMcbGqxvZk9FiiMu04D5QwyWRtPBAfKCc7kDmEIIGnTVT7qzb3gUCzEQ==@drc-cosmosdb-ne.documents.azure.com:10255/?ssl=true&replicaSet=globaldb');
 // after connecting to database
 
 app.use(function(req, res, next) {
